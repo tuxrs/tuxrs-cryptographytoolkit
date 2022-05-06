@@ -1,8 +1,80 @@
+
 import time
 import os 
 import pyfiglet
 from rich.console import Console
 console = Console()
+import hashlib
+
+def hash_decryptor():
+    import hashlib
+
+    flag = 0
+    counter = 0
+
+    pass_hash = input("Enter md5 hash: ")
+
+    wordlist = input("filename: ")
+    try:
+        pass_file = open(wordlist, "r")
+    except:
+        print("No file found")
+        quit()
+
+    for word in pass_file:
+
+        enc_wrd = word.encode('utf-8')
+        digest = hashlib.md5(enc_wrd.strip()).hexdigest()
+        counter += 1
+
+        if digest == pass_hash:
+            print("Password has been found!")
+            print("The decrypted password for " + pass_hash + " is:   " + word)
+            print("We analyzed " + str(counter) + " passwords from your file.")
+            flag = 1
+            break
+
+    if flag == 0:
+        print("The password is not in your file/list.")
+
+
+
+def pw_generatorr():   
+   
+    import random
+    import string
+
+    print('hello, Welcome to Password generator!')
+
+    length = int(input('\nEnter the length of password: '))                      
+
+    lower = string.ascii_lowercase
+    upper = string.ascii_uppercase
+    num = string.digits
+    symbols = string.punctuation
+
+    all = lower + upper + num + symbols
+
+    temp = random.sample(all,length)
+
+    password = "".join(temp)
+
+    print(password)
+
+def sha256():
+    string_to_hash = input("ENTER THE STRING TO ENCRYPT: ")
+    hash_object = hashlib.sha256(str(string_to_hash).encode('utf-8'))
+    print('Hash : ', hash_object.hexdigest())
+
+def sha512():
+    string_to_hash = input("ENTER THE STRING TO DECRYPT: ")
+    hash_object = hashlib.sha512(str(string_to_hash).encode('utf-8'))
+    print('Hash : ', hash_object.hexdigest())
+
+def sha1():
+    string_to_hash = input("ENTER THE STRING TO DECRYPT: ")
+    hash_object = hashlib.sha1(str(string_to_hash).encode('utf-8'))
+    print('Hash : ', hash_object.hexdigest())
 
 
 
@@ -79,6 +151,7 @@ elif scelta == 4:
         sha1()
 
 
+    
     
 
     
