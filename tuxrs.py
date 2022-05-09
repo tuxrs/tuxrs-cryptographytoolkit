@@ -7,7 +7,6 @@ console = Console()
 import hashlib
 
 def hash_decryptor():
-    import hashlib
 
     flag = 0
     counter = 0
