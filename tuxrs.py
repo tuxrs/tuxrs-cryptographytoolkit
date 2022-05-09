@@ -79,7 +79,6 @@ def sha1():
 
 
 
-#!/usr/bin/python
 
 def rot_13():
 
