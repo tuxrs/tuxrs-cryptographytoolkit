@@ -91,17 +91,17 @@ def rot_13():
 		indice = 13 
 		
 	alpha = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-	while True:
-		print("insert the phrase to encrypt or decrypt")
-		stringa = input()
-		newstringa = ''
-		for char in stringa:
-			try:
-				newchar = alpha[alpha.index(char)-indice]
-			except:
-				newchar = char
-			newstringa += newchar
-		print(newstringa)
+	
+	print("insert the phrase to encrypt or decrypt")
+	stringa = input()
+	newstringa = ''
+	for char in stringa:
+		try:
+			newchar = alpha[alpha.index(char)-indice]
+		except:
+			newchar = char
+		newstringa += newchar
+	print(newstringa)
 			
 
 
