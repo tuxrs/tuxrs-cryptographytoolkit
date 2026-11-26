@@ -5,6 +5,9 @@ import pyfiglet
 from rich.console import Console
 console = Console()
 import hashlib
+import random
+import string
+import sys
 
 def hash_decryptor():
 
@@ -40,8 +43,7 @@ def hash_decryptor():
 
 def pw_generatorr():   
    
-    import random
-    import string
+    
 
     print('hello, Welcome to Password generator!')
 
@@ -66,12 +68,12 @@ def sha256():
     print('Hash : ', hash_object.hexdigest())
 
 def sha512():
-    string_to_hash = input("ENTER THE STRING TO DECRYPT: ")
+    string_to_hash = input("ENTER THE STRING TO ENCRYPT: ")
     hash_object = hashlib.sha512(str(string_to_hash).encode('utf-8'))
     print('Hash : ', hash_object.hexdigest())
 
 def sha1():
-    string_to_hash = input("ENTER THE STRING TO DECRYPT: ")
+    string_to_hash = input("ENTER THE STRING TO ENCRYPT: ")
     hash_object = hashlib.sha1(str(string_to_hash).encode('utf-8'))
     print('Hash : ', hash_object.hexdigest())
 
@@ -82,7 +84,7 @@ def sha1():
 
 def rot_13():
 
-	import sys
+	
 	print("the rot 13 decoder")
 
 	try: 
